@@ -24,16 +24,17 @@ class Menu {
 
     html_text = '<div class="modal-body" />';
     this.corpo = $(html_text).appendTo(content);
+    this.corpo = $('<div class="container" />').appendTo(this.corpo);
 
     html_text = '<div class="modal-footer" />';
     this.rodape = $(html_text).appendTo(content);
   }
 
   adicionar_ao_corpo(conteudo) {
-    $(conteudo).appendTo(this.corpo);
+    return $(conteudo).appendTo(this.corpo);
   }
 
   adicionar_ao_rodape(conteudo) {
-    $(conteudo).appendTo(this.rodape);
+    return $(conteudo).appendTo(this.rodape);
   }
 }

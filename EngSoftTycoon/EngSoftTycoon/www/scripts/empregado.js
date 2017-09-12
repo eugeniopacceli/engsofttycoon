@@ -22,7 +22,7 @@ class Empregado {
   }
 
   get nome() {
-    return this.pnome + " " + this.unome;
+    return this.pnome[0] + ". " + this.unome;
   }
 }
 
