@@ -10,11 +10,8 @@
 
     function onDeviceReady() {
         // Nosso código aqui
-        $("#saveButton").click(function () {
-            playerName = $("#playerNameInput").val();
-            console.log(playerName);
-            $("#welcomeAlert").hide();
-        });
+        $("#content").load("startMenu.html");
+        //$("#content").load("mainPlayerScreen.html");
     };
 
     function onPause() {

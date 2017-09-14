@@ -8,48 +8,14 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/ionicons.css">
         <!-- Nosso CSS customizado -->
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <title>EngSoftTycoon</title>
     </head>
     <body>
-        <!-- Define container de corpo inteiro -->
-        <div class="container-fluid">
-            <!-- Define caixa verde na parte de baixo da tela (css customizado main.css) -->
-            <div class="alert alert-success fixed-bottom game-panel" id="welcomeAlert" role="alert">
-                <h4 class="alert-heading">Software Dev. Tycoon!</h4>
-                <hr />
-                <p>Para começar, aperte "Jogar"!</p>
-                <!-- Botão casado com o PopUp pelo Bootstrap, a partir do id -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUp">Jogar</button>
-            </div>
-        </div>
-        <!-- Definição do PopUp de entrada de nome -->
-        <div class="modal fade" id="popUp" tabindex="-1" role="dialog" aria-labelledby="popUpTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="popUpTitle">Janela</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Nome</label>
-                                <input type="text" class="form-control" id="playerNameInput" placeholder="Seu nome de jogador" aria-describedby="nickHelp">
-                                <small id="nickHelp" class="form-text text-muted">O nome a ser exibido no placar e durante o jogo.</small>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <!-- Existe uma lógica para o listener desse botão em main.js -->
-                        <button type="button" id="saveButton" data-dismiss="modal" class="btn btn-primary">Salvar</button>
-                    </div>
-                </div>
-            </div>
+        <div id="content">
+
         </div>
         <!-- JQuery -->
         <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
