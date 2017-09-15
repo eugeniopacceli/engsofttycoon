@@ -1,6 +1,20 @@
 # engsofttycoon
 Trabalho de Engenharia de Software, disciplina ofertada pelo DCC/UFMG em 2017/2,  prof. Rodolfo
 
+## Links para acompanhamento do projeto:
+
+* [Trello](trello.com/eng_software2017)
+* [Planilha de contatos](docs.google.com/spreadsheets/d/1o-FtVjZzmiUqtzsMbBGJ4ocResrbMrBqCtUN3xDiZSM/edit#gid=0)
+* [Página do Rodolfo](homepages.dcc.ufmg.br/~rodolfo/es-2-17/es-2-17.htm)
+* [Repositório](github.com/eugeniopacceli/engsofttycoon)
+* [Pasta Google Drive](drive.google.com/drive/folders/0B83xNATS5W6jQjhGek9hcmVqd28?usp=sharing)
+* [Planilha de Avaliação](https://docs.google.com/spreadsheets/d/1C1qcWYlcDhfdcZNraGaeW1YID4x9zbFHFrrQXxMcvXc/edit#gid=855060628)
+* [Design Document](https://docs.google.com/document/d/1kkdGsNXQxhenMFEwX-SnHTRWGV3bm1vIrJPRxLH6OAM/edit)
+* [Plano de Avaliação](https://docs.google.com/document/d/12PhlDh9r8kjcU-olnjghmW_XKf8yBeo--OMJ9nmgQlw/edit#heading=h.o2xk5lk3ddb7)
+
+Link para os branches:
+[Eng Soft Tycoon Git Branches](https://github.com/eugeniopacceli/engsofttycoon/branches)
+
 # Tutoriais e dicas para uso da ferramenta Git
 
 * [PDF de ajuda](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
