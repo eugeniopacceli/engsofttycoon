@@ -4,6 +4,7 @@
 // e execute "window.location.reload()" no Console do JavaScript.
 
 var paused;
+var candidatos = new ListaTrabalhadores;
 
 (function () {
   "use strict";
@@ -16,13 +17,19 @@ var paused;
   function init() {
     $("#content").load("startMenu.html");
     paused = false;
+
+    //candidatos = new Array();
+    for (var i = 0; i < 3; ++i) {
+      var d = new Desenvolvedor();
+      candidatos.add(d);
+      //candidatos.push(d);
+    }
+
   }
 
   function onDeviceReady() {
     // Nosso código aqui
     init();
-    //$("#content").load("startMenu.html");
-    //$("#content").load("mainPlayerScreen.html");
   };
 
   function onPause() {
@@ -40,6 +47,12 @@ function start_game() {
 
 function contratar_funcionarios() {
   console.log("Contratando");
+  var div_corpo = $("#popUp_func .modal-dialog .modal-body");
+  candidatos.atualizar_html(div_corpo);
+  //for (var i = 0; i < candidatos.length; ++i) {
+  //  conteudo = '<div class="row" />';
+  //  $(conteudo).appendTo(div_corpo);
+  //}
 }
 
 function definir_novo_projeto() {
@@ -52,4 +65,7 @@ function parar_tempo() {
   else
     $("#pausar_jogo_btn").addClass("ion-pause").removeClass("ion-play");
   paused = !paused;
+}
+
+function fim_mes() {
 }
