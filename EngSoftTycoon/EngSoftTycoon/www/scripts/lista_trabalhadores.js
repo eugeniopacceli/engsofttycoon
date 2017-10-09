@@ -1,10 +1,24 @@
 class ListaTrabalhadores {
-  constructor() {
+  constructor(n) {
     this.membros = new Array();
+    for (var i = 0; i < n; ++i) {
+      var d = new Desenvolvedor();
+      this.membros.push(d);
+    }
   }
 
   add(empregado) {
     this.membros.push(empregado);
+  }
+
+  get len() {
+    return this.membros.length;
+  }
+
+  get(i) {
+    if (i >= this.membros.length)
+      return false;
+    return this.membros[i];
   }
 
   atualizar_html(elemento) {

@@ -3,8 +3,13 @@
 // Para depurar códigos no carregamento de página em dispositivos/emuladores Android ou que simulam o Cordova: inicie o aplicativo, defina os pontos de interrupção 
 // e execute "window.location.reload()" no Console do JavaScript.
 
+var NOME_EMPRESA = 'ENGSOFT',
+    NUMERO_CANDIDATOS = 3,
+    TICK_INTERVALO_MS = 500;
+
 var paused;
-var candidatos = new ListaTrabalhadores;
+var candidatos;
+var empresa;
 
 (function () {
   "use strict";
@@ -16,14 +21,7 @@ var candidatos = new ListaTrabalhadores;
 
   function init() {
     $("#content").load("startMenu.html");
-    paused = false;
 
-    //candidatos = new Array();
-    for (var i = 0; i < 3; ++i) {
-      var d = new Desenvolvedor();
-      candidatos.add(d);
-      //candidatos.push(d);
-    }
 
   }
 
@@ -43,16 +41,16 @@ var candidatos = new ListaTrabalhadores;
 
 function start_game() {
   $("#content").load("mainPlayerScreen.html");
+  paused = false;
+  candidatos = new ListaTrabalhadores(NUMERO_CANDIDATOS);
+  setInterval(tick, TICK_INTERVALO_MS);
+  empresa = new Empresa(NOME_EMPRESA);
 }
 
 function contratar_funcionarios() {
   console.log("Contratando");
   var div_corpo = $("#popUp_func .modal-dialog .modal-body");
   candidatos.atualizar_html(div_corpo);
-  //for (var i = 0; i < candidatos.length; ++i) {
-  //  conteudo = '<div class="row" />';
-  //  $(conteudo).appendTo(div_corpo);
-  //}
 }
 
 function definir_novo_projeto() {
@@ -68,4 +66,21 @@ function parar_tempo() {
 }
 
 function fim_mes() {
+  empresa.subtrair_despesas();
+  candidatos = new ListaTrabalhadores(NUMERO_CANDIDATOS);
+  console.log("FIM DO MÊS");
+}
+
+var tick_count = 0;
+function tick() {
+  if (paused)
+    return;
+  tick_count = (tick_count + 1)%30;
+  // seria bom parar o tempo para evitar modificações na lista de funcionários
+  // ou qualquer coisa assim enquanto o usuário está mexendo em um menu
+  if (tick_count == 29)
+    parar_tempo();
+  if (tick_count == 0)
+    fim_mes();
+  console.log("TICK");
 }
