@@ -1,0 +1,36 @@
+﻿<div class="modal fade" id="projectsPopUp" tabindex="-1" role="dialog" aria-labelledby="popUpTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="popUpTitle">Projetos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Aplicativo para ONG</h5>
+                            <small class="text-muted">App</small>
+                        </div>
+                        <p class="mb-1">Aplicativo nativo com backend na web</p>
+                        <small>Prazo estimado: 4 meses</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Controle de estoque</h5>
+                            <small class="text-muted">CRUD</small>
+                        </div>
+                        <p class="mb-1">Software estilo CRUD simples</p>
+                        <small>Prazo estimado: 3 meses</small>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="newProject" data-dismiss="modal" class="btn btn-primary btn-lg largefont"><span class="step size-96"><i class="icon ion-plus-circled"></i></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="scripts/showProjects.js"></script>
