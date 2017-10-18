@@ -71,3 +71,7 @@
     display: table-cell;
     vertical-align: middle;
 }
+.modal-body {
+  max-height: calc(50vh);
+  overflow-y: scroll;
+}
