@@ -4,7 +4,7 @@
 // e execute "window.location.reload()" no Console do JavaScript.
 
 var NOME_EMPRESA = 'ENGSOFT',
-    NUMERO_CANDIDATOS = 3,
+    NUMERO_CANDIDATOS = 10,
     TICK_INTERVALO_MS = 500;
 
 var paused;
