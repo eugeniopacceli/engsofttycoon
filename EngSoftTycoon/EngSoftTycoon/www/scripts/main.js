@@ -36,6 +36,14 @@ var empresa;
     };
 })();
 
+function initializeList(id, itemClick){
+	$(id + " .list-group a").click(function() {
+		$(id + " .list-group a").removeClass("active");
+		$(this).addClass("active");
+		itemClick(this);
+	});
+}
+
 function loadAndShowPopUp(loadUrl, popUpName) {
     $("#gameContent").load(loadUrl, function () {
         $(popUpName).modal('show');

@@ -1,7 +1,7 @@
 class Desenvolvedor extends Empregado {
 
   constructor() {
-    super();
+    super('Desenvolvedor');
     // Atributos de aprendizado
     this.c = Math.random();
     this.java = Math.random();
