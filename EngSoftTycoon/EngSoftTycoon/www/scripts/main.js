@@ -9,6 +9,7 @@ var NOME_EMPRESA = 'ENGSOFT',
 
 var paused;
 var candidatos;
+var projetos;
 var empresa;
 
 (function () {
@@ -36,6 +37,7 @@ var empresa;
     };
 })();
 
+// Para lista do popup #id, executar itemClick para cada item dela clicado
 function initializeList(id, itemClick){
 	$(id + " .list-group a").click(function() {
 		$(id + " .list-group a").removeClass("active");
@@ -68,6 +70,7 @@ function start_game() {
     $("#content").load("mainPlayerScreen.html", setupStartButtons);
     paused = true;
     candidatos = new ListaTrabalhadores(NUMERO_CANDIDATOS);
+    projetos = Project.generateRandom(5);
     setInterval(tick, TICK_INTERVALO_MS);
     empresa = new Empresa(NOME_EMPRESA);
 }
@@ -98,6 +101,7 @@ function parar_tempo() {
 function fim_mes() {
     empresa.subtrair_despesas();
     candidatos = new ListaTrabalhadores(NUMERO_CANDIDATOS);
+    projetos = Project.generateRandom(5);
     console.log("FIM DO MÊS");
 }
 

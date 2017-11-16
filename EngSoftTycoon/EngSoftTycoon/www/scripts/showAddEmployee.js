@@ -32,9 +32,9 @@ $("#addEmployee #add").click(function(){
 			candidate = c;
 	}
 
-        candidatos.membros = candidatos.membros.filter(function(c) {
-          return c != candidate;
-        });
+	candidatos.membros = candidatos.membros.filter(function(c) {
+		return c != candidate;
+	});
 
 	fillList();
 	initializeList("#addEmployee", showItemDetails);

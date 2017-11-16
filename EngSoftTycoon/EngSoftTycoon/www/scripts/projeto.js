@@ -4,12 +4,13 @@ var projectCount = 0;
 
 class Project{
  
-    constructor(nameStr, descriptionStr){
-        this.name = nameStr;
-        this.description = descriptionStr;
+    constructor(){
+        this.name = this.generateName();
+        this.description = this.generateName();
         this.workers = [];
-        this.cost = 0;
+        this.difficulty = irandom(1000,100000);
         this.progress = 0;
+        this.deadline = irandom(1,12);
         this.status = "notStarted";
     }
 
@@ -40,14 +41,37 @@ class Project{
     }
 
     sumOfCompetencies(){
-        
+        for(var worker of this.workers){
+            for(var skill of worker.skills){
+
+            }
+        }
     }
 
     static get projectCount(){ return projectCount; }
 
     generateName(){
         projectCount++;
-        return projectTypes[irandom( O, projectTypes.length)] + projectCount;
+        return projectTypes[irandom(0, projectTypes.length)] + " " + projectCount;
+    }
+
+    static generateRandom(number){
+        var array = [];
+        for(var i = 0; i < number; i++){
+            array.push(new Project());
+        }
+        return array;
+    }
+
+    html(){
+        return '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">\
+                    <div class="d-flex w-100 justify-content-between">\
+                        <h5 class="mb-1">' + this.name + '</h5>\
+                        <small class="text-muted">' + this.description + '</small>\
+                    </div>\
+                    <p class="mb-1"> Pontos de função: ' + this.difficulty + '</p>\
+                    <small>Prazo estimado: ' + this.deadline + ' meses</small>\
+                </a>';
     }
 }
 
