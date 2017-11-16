@@ -14,7 +14,7 @@ class Desenvolvedor extends Empregado {
     this.entrosamento = Math.random();
 
     var pretensao_salarial = Math.random();
-    this.salario = (this.c + this.java)*1500
+    /*this.salario = (this.c + this.java)*1500
       + this.documentacao*500
       + this.aprendizado*1000;
       + this.organizacao*500
@@ -22,7 +22,7 @@ class Desenvolvedor extends Empregado {
     this.salario = 1500 + this.salario*(1.0 + pretensao_salarial/3.0);
     this.salario = Math.ceil(this.salario);
     this.salario = this.salario - (this.salario%50);
-
+    */
   }
 
   get atributos() {
