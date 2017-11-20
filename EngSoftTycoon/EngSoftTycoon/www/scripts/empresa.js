@@ -1,6 +1,6 @@
 class Empresa {
   constructor(nome) {
-    this.capital = 10000.0;
+    this.capital = 0.0;
     this.funcionarios = new ListaTrabalhadores();
     this.projects = [];
     this.activeProjects = [];
@@ -13,5 +13,4 @@ class Empresa {
       this.capital -= f.salario;
     }
   }
-
 }

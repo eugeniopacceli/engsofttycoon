@@ -10,5 +10,5 @@ for(c of empresa.funcionarios.membros){
 
 function showItemDetails(item){
 	active = $(item).attr("data-id");
-	console.log(active);
+	//console.log(active);
 }

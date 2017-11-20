@@ -37,7 +37,7 @@
 }
 
 .pausebtn {
-    float: right !important;
+    float: left !important;
     background-color: rgba(128, 128, 128, 0.7);
     margin-top: 5px;
     margin-right: 5px;

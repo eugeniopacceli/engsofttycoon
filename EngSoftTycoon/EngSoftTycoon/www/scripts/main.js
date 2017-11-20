@@ -1,7 +1,7 @@
 ﻿// Para uma introdução ao modelo em branco, consulte a seguinte documentação:
 // http://go.microsoft.com/fwlink/?LinkID=397704
-// Para depurar códigos no carregamento de página em dispositivos/emuladores Android ou que simulam o Cordova: inicie o aplicativo, defina os pontos de interrupção 
-// e execute "window.location.reload()" no Console do JavaScript.
+// Para depurar códigos no carregamento de página em dispositivos/emuladores Android ou que simulam o Cordova: inicie o
+// aplicativo, defina os pontos de interrupção e execute "window.location.reload()" no Console do JavaScript.
 
 var NOME_EMPRESA = 'ENGSOFT',
     NUMERO_CANDIDATOS = 10,
@@ -59,6 +59,7 @@ function loadAndShowPopUp(loadUrl, popUpName) {
 }
 
 function buttonToOpenPopUp(button, loadUrl, popUpName) {
+	console.log("buttonToOpenPopUp" + button +  loadUrl + popUpName);
     $(button).click(function () {
         stopTime();
         $(".modal-backdrop.fade.show").remove(); // Fixes multiple pop ups background stack bug
@@ -70,6 +71,9 @@ function setupStartButtons() {
     buttonToOpenPopUp("#employeesBtn", "showEmployees.html", "#employeesPopUp");
     buttonToOpenPopUp("#projectsBtn", "showProjects.html", "#projectsPopUp");
     buttonToOpenPopUp("#statusBtn", "showStatus.html", "#statusPopUp");
+    //buttonToOpenPopUp("#dollar_dollar_bill", "showStatus.html", "#statusPopUp");
+	//buttonToOpenPopUp("#dollar_dollar_bill", "showMeTheMoney.html", "#moneyMenu");
+	buttonToOpenPopUp("#dollar_dollar_bill", "showMeTheMoney.html", "#moneyMenu");
 }
 
 function start_game() {
@@ -108,7 +112,10 @@ function fim_mes() {
     empresa.subtrair_despesas();
     candidatos = new ListaTrabalhadores(NUMERO_CANDIDATOS);
     projetos = Project.generateRandom(5);
-    console.log("FIM DO MÊS");
+	console.log("NOTHING");
+	//console.log($("#capital_atual");
+	$("#capital_atual").html("NOTHING");
+    //console.log("FIM DO MÊS");
 }
 
 var tick_count = 0;
@@ -120,15 +127,16 @@ function tick() {
 	if (dia > duracao_meses[mes]) {
 		dia = 1;
 		mes += 1;
-
-        loadAndShowPopUp("showMonth.html", "#monthPopUp");
-        parar_tempo();
-        fim_mes();
-
 		if (mes >= 12) {
 			ano += 1;
 			mes = 0;
 		}
 	}
+	console.log(dia + " " +  mes + " " + ano)
 	$("#showTime").html(dia + " " + nome_meses[mes] + " " + ano);
+	if (dia == 1) {
+        loadAndShowPopUp("showMonth.html", "#monthPopUp");
+        parar_tempo();
+        fim_mes();
+	}
 }
