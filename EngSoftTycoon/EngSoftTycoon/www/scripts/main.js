@@ -11,6 +11,12 @@ var paused;
 var candidatos;
 var projetos;
 var empresa;
+var start_date = new Date();
+var dia = start_date.getDate(),
+	mes = start_date.getMonth(),
+	ano = start_date.getFullYear();
+var nome_meses = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+var duracao_meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 (function () {
     "use strict";
@@ -110,14 +116,19 @@ function tick() {
     if (paused)
         return;
     tick_count = tick_count % 30 + 1;
-    $("#showTime").html(tick_count);
-    // seria bom parar o tempo para evitar modificações na lista de funcionários
-    // ou qualquer coisa assim enquanto o usuário está mexendo em um menu
-    if (tick_count == 30) {
+	dia += 1;
+	if (dia > duracao_meses[mes]) {
+		dia = 1;
+		mes += 1;
+
         loadAndShowPopUp("showMonth.html", "#monthPopUp");
         parar_tempo();
-    }
-    if (tick_count == 1)
         fim_mes();
-    console.log("TICK");
+
+		if (mes >= 12) {
+			ano += 1;
+			mes = 0;
+		}
+	}
+	$("#showTime").html(dia + " " + nome_meses[mes] + " " + ano);
 }
