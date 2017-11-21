@@ -10,14 +10,20 @@
             <div class="modal-body">
 
                 <div class="list-group">
-			<h5 class="mb-1">Taxa de juros real:</h5>
-			<small class="text-muted" id="juros_real">40.41%</small>
+			<h5 class="mb-1">Taxa de juros real (%):</h5>
+			<small class="text-muted" id="juros_real">40.41</small>
 			<small></small>
+			<h5 class="mb-1">Quantia:</h5>
+			<form>
+			    <input type="text" id="ammount"></input>
+			</form>
                 </div>
 
             </div>
             <div class="modal-footer">
-		<button type="button" id="devils_money" class="btn btn-danger btn-lg">
+		<button type="button" id="confirm_soul_selling" class="btn btn-danger btn-lg"
+		    data-dismiss="modal"
+		    onclick="emprestimo()">
 		    <span class="step size-96">
 			<i class="icon ion-checkmark"></i>
 		    </span>

@@ -118,6 +118,14 @@ function fim_mes() {
     //console.log("FIM DO MÊS");
 }
 
+function emprestimo() {
+	var val = parseFloat($("#ammount").val()),
+		juros = parseFloat($("#juros_real").html());
+	empresa.adicionar_emprestimo(val, juros);
+	//console.log(val);
+	//console.log(juros);
+}
+
 var tick_count = 0;
 function tick() {
     if (paused)
