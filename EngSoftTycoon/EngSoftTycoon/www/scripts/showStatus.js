@@ -1,1 +1,2 @@
-﻿console.log("loaded");
+﻿//console.log("loaded");
+console.log('show status')

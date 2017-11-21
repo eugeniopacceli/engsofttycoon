@@ -59,7 +59,6 @@ function loadAndShowPopUp(loadUrl, popUpName) {
 }
 
 function buttonToOpenPopUp(button, loadUrl, popUpName) {
-	console.log("buttonToOpenPopUp" + button +  loadUrl + popUpName);
     $(button).click(function () {
         stopTime();
         $(".modal-backdrop.fade.show").remove(); // Fixes multiple pop ups background stack bug
@@ -86,13 +85,11 @@ function start_game() {
 }
 
 function contratar_funcionarios() {
-    console.log("Contratando");
     var div_corpo = $("#popUp_func .modal-dialog .modal-body");
     candidatos.atualizar_html(div_corpo);
 }
 
 function definir_novo_projeto() {
-    console.log("Definindo novo projeto");
 }
 
 function stopTime() {
@@ -112,18 +109,12 @@ function fim_mes() {
     empresa.subtrair_despesas();
     candidatos = new ListaTrabalhadores(NUMERO_CANDIDATOS);
     projetos = Project.generateRandom(5);
-	console.log("NOTHING");
-	//console.log($("#capital_atual");
-	$("#capital_atual").html("NOTHING");
-    //console.log("FIM DO MÊS");
 }
 
 function emprestimo() {
 	var val = parseFloat($("#ammount").val()),
 		juros = parseFloat($("#juros_real").html());
 	empresa.adicionar_emprestimo(val, juros);
-	//console.log(val);
-	//console.log(juros);
 }
 
 var tick_count = 0;
@@ -140,7 +131,6 @@ function tick() {
 			mes = 0;
 		}
 	}
-	console.log(dia + " " +  mes + " " + ano)
 	$("#showTime").html(dia + " " + nome_meses[mes] + " " + ano);
 	if (dia == 1) {
         loadAndShowPopUp("showMonth.html", "#monthPopUp");
