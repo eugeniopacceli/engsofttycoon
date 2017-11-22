@@ -27,8 +27,8 @@ class Empresa {
 		  this.balanco.push(-0.0);
 	  }
 	  this.balanco.push(this.capital);
-	  if(capital < 0){
-		  adicionar_emprestimo(-capital, 0.4);
+	  if(this.capital < 0){
+		  adicionar_emprestimo(-this.capital, 0.4);
 	  }
   }
   adicionar_emprestimo(val, juros) {
