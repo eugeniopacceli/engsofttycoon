@@ -36,6 +36,7 @@ class Empregado {
         this.skills = this.generateSkills();
         this.salario = this.computeSalary();
         this.id = ++globalId;
+        this.project = null;
     }
 
     generateSkills() {
@@ -74,14 +75,19 @@ class Empregado {
     }
 
     get html() {
-        return '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start" data-id=' + this.id + ' data-toggle="collapse" data-target="#collapse' + this.id + '" aria-expanded="false" aria-controls="collapseExample"> \
+        var returnString = '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start" data-id=' + this.id + ' data-toggle="collapse" data-target="#collapse' + this.id + '" aria-expanded="false" aria-controls="collapseExample"> \
 			<div class="d-flex w-100"> \
 				<h5 class="mb-1">' + this.nome + '</h5> \
               <div class="collapse" id="collapse' + this.id + '">\
                   ' + this.skillsTable() + '\
               </div>\
-			</div> \
-			<small> R$' + this.salario + ',00</small> \
-		</a>';
+            </div>';
+        
+        if(this.project != null){
+            returnString += '<small style="color:green"> R$' + this.salario + ',00, trabalhando em: ' + this.project.name + '</small></a>';
+        }else{
+            returnString += '<small> R$' + this.salario + ',00</small></a>';
+        }
+        return returnString;
     }
 }

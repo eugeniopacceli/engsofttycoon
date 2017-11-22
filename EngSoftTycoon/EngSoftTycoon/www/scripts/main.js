@@ -139,12 +139,7 @@ function tick() {
     }
     $(".projectProgress").remove();
     // ---
-    for (p of empresa.projects) {
-        p.progress += 3;
-    }
-    empresa.projects = empresa.projects.filter(function (p) {
-        return p.progress < 100;
-    });
+    empresa.computeDay();
     // ---
     $("#content").append(empresa.getHtmlForProjectsStatus());
 }

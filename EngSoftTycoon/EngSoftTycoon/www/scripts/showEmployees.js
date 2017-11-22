@@ -1,14 +1,15 @@
 ﻿buttonToOpenPopUp("#newEmployee", "showAddEmployee.html", "#addEmployee");
+buttonToOpenPopUp("#employeeToProject", "employeeProject.html", "#employeeProject");
 
-initializeList("#employeesPopUp", function(){});
+var activeEmployeeToProject = null;
 
 var list = $("#employeesPopUp .list-group");
 
+list.empty();
 for(c of empresa.funcionarios.membros){
 	list.append(c.html);
 }
 
-function showItemDetails(item){
-	active = $(item).attr("data-id");
-	//console.log(active);
-}
+initializeList("#employeesPopUp", function(item){
+	activeEmployeeToProject = $(item).attr("data-id");
+});

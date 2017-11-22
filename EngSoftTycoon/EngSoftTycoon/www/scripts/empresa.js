@@ -6,7 +6,8 @@ class Empresa {
 		this.activeProjects = [];
 		this.nome = nome;
 		this.parcelas = [];
-		this.balanco = []
+		this.balanco = [];
+		this.oldProjects = [];
 	}
 
   subtrair_despesas() {
@@ -26,6 +27,9 @@ class Empresa {
 		  this.balanco.push(-0.0);
 	  }
 	  this.balanco.push(this.capital);
+	  if(capital < 0){
+		  adicionar_emprestimo(-capital, 0.4);
+	  }
   }
   adicionar_emprestimo(val, juros) {
 	  this.capital += val;
@@ -43,10 +47,38 @@ class Empresa {
       this.projects.push(p);
   }
 
+  computeDay(){
+	for(let p of this.projects) {
+        var total = 0;
+        var employeesInProject = this.funcionarios.getByProject(p);
+        for(let e of employeesInProject){
+            for(let s of e.skills){
+                total += s.skill;
+            }
+        }
+        p.progress += Math.ceil((total / p.difficulty));
+        if(p.progress >= 100){
+            for(let e of employeesInProject){
+                e.project = null;
+			}
+			this.capital += p.revenue;
+			this.push(p.revenue);
+			this.oldProjects.push(p);
+        }
+    }
+    this.projects = this.projects.filter(function (p) {
+        return p.progress < 100;
+    });
+  }
+
   getHtmlForProjectsStatus() {
-      var htmlList = "";
-      for (p of this.projects) {
-          htmlList += '<div class="projectProgress"><h2>' + p.name + '</h2><p>' + p.description + '</p>\
+	  var htmlList = "";
+      for(let p of this.projects) {
+		  var funcsString = "";
+		  for(let e of this.funcionarios.getByProject(p)){
+			funcsString += " | " + e.pnome + " " + e.unome;
+		  }
+          htmlList += '<div class="projectProgress"><h2>' + p.name + '</h2><p>' + p.description + ' ' + funcsString + '</p>\
               <div class="progress">\
                  <div class="progress-bar" role="progressbar" aria-valuenow="' + p.progress + '"\
                   aria-valuemin="0" aria-valuemax="100" style="width:' + p.progress + '%">\

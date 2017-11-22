@@ -21,6 +21,25 @@ class ListaTrabalhadores {
     return this.membros[i];
   }
 
+  getById(id){
+    for(let e of this.membros){
+      if(e.id == id){
+        return e;
+      }
+    }
+    return null;
+  }
+
+  getByProject(proj){
+    var employees = [];
+    for(let e of this.membros){
+      if(e.project == proj){
+        employees.push(e);
+      }
+    }
+    return employees;
+  }
+
   atualizar_html(elemento) {
     elemento.html('');
     for (var i = 0; i < this.membros.length; ++i) {
