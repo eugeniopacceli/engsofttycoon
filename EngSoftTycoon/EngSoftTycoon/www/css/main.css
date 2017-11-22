@@ -6,6 +6,12 @@
     -o-background-size: cover;
 }
 
+.projectProgress {
+    color: #ffffff;
+    padding: 10px;
+    background-color: #000000AA;
+}
+
 .game-panel {
     background-color: rgba(212, 237, 218, 0.9);
     margin-left: 10px;
@@ -27,7 +33,6 @@
 }
 
 .header {
-    position: absolute;
     top: 0;
     width: 100%;
     /* Set the fixed height of the footer here */

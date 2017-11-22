@@ -1,10 +1,12 @@
 var projectTypes = [ "CRUD", "Aplicativo Mobile", "Sistema web", "Site", "Aplicativo Desktop"];
 
 var projectCount = 0;
+var _projectsId = 0;
 
 class Project{
  
-    constructor(){
+    constructor() {
+        this.id = _projectsId++;
         this.name = this.generateName();
         this.description = this.generateName();
         this.workers = [];
@@ -64,7 +66,7 @@ class Project{
     }
 
     html(){
-        return '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">\
+        return '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start" data-id="' + this.id + '">\
                     <div class="d-flex w-100 justify-content-between">\
                         <h5 class="mb-1">' + this.name + '</h5>\
                         <small class="text-muted">' + this.description + '</small>\

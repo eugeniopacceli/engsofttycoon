@@ -136,5 +136,15 @@ function tick() {
         loadAndShowPopUp("showMonth.html", "#monthPopUp");
         parar_tempo();
         fim_mes();
-	}
+    }
+    $(".projectProgress").remove();
+    // ---
+    for (p of empresa.projects) {
+        p.progress += 3;
+    }
+    empresa.projects = empresa.projects.filter(function (p) {
+        return p.progress < 100;
+    });
+    // ---
+    $("#content").append(empresa.getHtmlForProjectsStatus());
 }

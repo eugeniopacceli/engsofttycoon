@@ -38,4 +38,22 @@ class Empresa {
 	  //console.log(this.parcelas);
 	  //console.log(this.parcelas[12]);
   }
+
+  addProject(p) {
+      this.projects.push(p);
+  }
+
+  getHtmlForProjectsStatus() {
+      var htmlList = "";
+      for (p of this.projects) {
+          htmlList += '<div class="projectProgress"><h2>' + p.name + '</h2><p>' + p.description + '</p>\
+              <div class="progress">\
+                 <div class="progress-bar" role="progressbar" aria-valuenow="' + p.progress + '"\
+                  aria-valuemin="0" aria-valuemax="100" style="width:' + p.progress + '%">\
+                  ' + p.progress + '%\
+              </div>\
+          </div></div>';
+      }
+      return htmlList;
+  }
 }
