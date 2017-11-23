@@ -1,10 +1,43 @@
 class ListaTrabalhadores {
-  constructor() {
+  constructor(n) {
     this.membros = new Array();
+    for (var i = 0; i < n; ++i) {
+      var d = new Desenvolvedor();
+      this.membros.push(d);
+    }
   }
 
   add(empregado) {
     this.membros.push(empregado);
+  }
+
+  get len() {
+    return this.membros.length;
+  }
+
+  get(i) {
+    if (i >= this.membros.length)
+      return false;
+    return this.membros[i];
+  }
+
+  getById(id){
+    for(let e of this.membros){
+      if(e.id == id){
+        return e;
+      }
+    }
+    return null;
+  }
+
+  getByProject(proj){
+    var employees = [];
+    for(let e of this.membros){
+      if(e.project == proj){
+        employees.push(e);
+      }
+    }
+    return employees;
   }
 
   atualizar_html(elemento) {

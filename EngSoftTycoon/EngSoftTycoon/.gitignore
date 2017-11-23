@@ -5,3 +5,5 @@
 [Pp]lugins/remote_ios.json
 /[Pp]latforms/
 *.swp
+node_modules/*
+plugins/*
