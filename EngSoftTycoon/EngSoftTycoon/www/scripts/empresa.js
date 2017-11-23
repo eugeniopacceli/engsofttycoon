@@ -18,11 +18,11 @@ class Empresa {
 		  salarios += f.salario;
 		  this.capital -= f.salario;
 	  }
-	  this.balanco.push(-salarios);
+	  this.balanco.push((-salarios));
 	  var p = this.parcelas.pop();
 	  if (p) {
 		  this.capital -= p;
-		  this.balanco.push(-p);
+		  this.balanco.push((-p));
 	  } else {
 		  this.balanco.push(-0.0);
 	  }
@@ -62,7 +62,7 @@ class Empresa {
                 e.project = null;
 			}
 			this.capital += p.revenue;
-			this.push(p.revenue);
+			this.balanco.push(p.revenue);
 			this.oldProjects.push(p);
         }
     }
